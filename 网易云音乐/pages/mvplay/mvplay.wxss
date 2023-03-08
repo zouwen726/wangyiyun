@@ -1,0 +1,58 @@
+/* pages/mvplay/mvplay.wxss */
+.mv_video{
+  width: 100%;
+}
+.mvdetail{
+  padding: 0 20rpx;
+  box-sizing: border-box;
+}
+.mvdetail .name{
+  color: #333;
+}
+.mvdetail .artistName{
+  font-size: 28rpx;
+  color: #555;
+}
+.mvdetail .con{
+  font-size: 28rpx;
+  color: rgb(143, 141, 141);
+}
+.title{
+  font-size: 40rpx;
+  color: #333;
+  text-indent: 20rpx;
+  margin-top: 20rpx;
+}
+.mvlist{
+  padding: 20rpx;
+
+}
+.mvlist .item{
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid #f1f1f1;
+  margin-bottom: 10rpx;
+}
+.mvlist .item image{
+  width: 240rpx;
+  height: 135rpx;
+  display: block;
+  /* height: 150rpx; */
+  margin-right:30rpx ;
+  /* border-radius: 15rpx; */
+}
+.mvlist .item .name{
+  font-size: 38rpx;
+  color: #444;
+}
+.mvlist .item .txt{
+  font-size: 30rpx;
+  color: rgb(133, 133, 133);
+}
+.mvlist .item .name,.mvlist .item .txt{
+  width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+

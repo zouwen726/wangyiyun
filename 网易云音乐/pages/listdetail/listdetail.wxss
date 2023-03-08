@@ -1,0 +1,106 @@
+/* pages/listdetail/listdetail.wxss */
+page{
+  padding: 0 30rpx;
+  color: #555;
+}
+.listheader{
+  display: flex;
+}
+.listheader .imgbox{
+  width: 300rpx;
+  height: 300rpx;
+  border-radius: 20rpx;
+  margin-right: 40rpx;
+}
+.imgbox image{
+  width: 300rpx;
+  height: 300rpx;
+  
+}
+.listheader .txtbox .name{
+  /* color: white; */
+  font-size: 40rpx;
+}
+.txtbox .wangyi{
+  height: 80rpx;
+  display: flex;
+  /* align-items: center; */
+  margin-top: 20rpx;
+  align-items: center;
+}
+.listheader .txtbox {
+  width: 350rpx;
+  padding-right: 20rpx;
+}
+.wangyi view{
+  /* width: 50rpx;
+  height: 50rpx; */
+  margin-right: 20rpx;
+}
+.wangyi view image{
+  width: 50rpx;
+  height: 50rpx;
+  display: block;
+}
+.wangyi .title{
+  font-size: 30rpx;
+}
+/* 最新音乐 */
+.musicbox{
+
+}
+.musicbox .item{
+  display: flex;
+  padding: 10rpx 0rpx ;
+  justify-content: space-between;
+  border-bottom: 1rpx solid rgb(241, 241, 241);
+ 
+  align-items: center;
+}
+.item .txtbox{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  /* padding-right: 10rpx; */
+}
+.txtbox .txt{
+  font-size: 26rpx;
+  color: #888;
+  /* 调整文字行数 */
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.item .playimg{
+  width: 100rpx;
+  height: 100%;
+  display: flex;
+  /* margin-right: 60rpx; */
+}
+.item .playimg image{
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+
+}
+.item .txtbox .mname{
+  font-size: 32rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 500rpx;
+}
+.item .txtbox .name{
+  font-size: 28rpx;
+  color: #666;
+}
+.item .num{
+  font-size: 40rpx;
+  /* font-weight: bold; */
+  color: #a5a5a5;
+  margin-right: 20rpx;
+  width: 50rpx;
+  text-align: center;
+}

@@ -1,0 +1,109 @@
+/* pages/singerdetail/singerdetail.wxss */
+.imgshow{
+  position: relative;
+  width: 100%;
+  height: 600rpx;
+  overflow: hidden;
+}
+.imgshow image{
+  display: block;
+  position: absolute;
+  width: 100%;
+}
+.imgshow .txtbox{
+  position: absolute;
+  bottom: 10%;
+  left: 40rpx;
+
+}
+.txtbox .name{
+  font-size: 50rpx;
+  color: white;
+  font-weight: bold;
+}
+.txtbox .txt{
+  font-size: 30rpx;
+  color: #fff;
+  text-shadow: 0px 0px 1rpx black;
+}
+.title{
+  font-size: 35rpx;
+  font-weight: bold;
+  line-height: 80rpx;
+  color: #333;
+  position: relative;
+  text-indent: 30rpx;
+}
+.context{
+  font-size: 26rpx;
+  padding: 0 30rpx;
+  line-height: 40rpx;
+  color: #666;
+  /* 调整文字行数 */
+  display: -webkit-box;
+  -webkit-box-orient:vertical;
+  /* -webkit-line-clamp: 3; */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.txthidden{
+  -webkit-line-clamp: 3;
+}
+.txtshow{
+  -webkit-line-clamp: 0;
+}
+.showbtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100rpx;
+
+}
+
+.showbtn text{
+  font-size: 28rpx;
+  color: #777;
+}
+.showbtn image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.showbtn .top{
+  transform:rotate(180deg)
+}
+.musicbox .item{
+  display: flex;
+  padding: 10rpx 0rpx ;
+  justify-content: space-between;
+  border-bottom: 1rpx solid rgb(241, 241, 241);
+  margin-left: 32rpx;
+}
+.item .txtbox{
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.item .playimg{
+  width: 100rpx;
+  height: 100%;
+  display: flex;
+}
+.item .playimg image{
+  width: 60rpx;
+  height: 60rpx;
+  display: block;
+}
+.item .txtbox .mname{
+  font-size: 32rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 500rpx;
+}
+.item .txtbox .name{
+  font-size: 24rpx;
+  color: rgb(145, 143, 143);
+}
+::-webkit-scrollbar{
+  display: none;
+}

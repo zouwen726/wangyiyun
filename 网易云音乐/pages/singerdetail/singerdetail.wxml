@@ -1,0 +1,32 @@
+<view class="imgshow">
+  <image src="{{singerdetail.data.data.artist.cover}}" mode="widthFix"/>
+  <view class="txtbox">
+    <view class="name">{{singerdetail.data.data.artist.name}}</view>
+    <view class="txt">网易云音乐-歌手</view>
+  </view>
+</view>
+<view class="title">
+   歌手简介
+ </view>
+ <view class="context {{txthidden==='show'?'txtshow':'txthidden'}}">
+   {{singerdetail.data.data.artist.briefDesc}}
+ </view>
+<view class="showbtn" bindtap="showbtn">
+<text>{{btntxt}}</text>
+<image class="{{txthidden==='show'?'top':''}}" src="/images/arr.png" mode=""/>
+</view>
+ <view class="title">热门单曲</view>
+<view class="musicbox">
+  <block wx:for="{{hotMusicList.data.songs}}" wx:key="index" wx:for-index="in">
+    <view class="item" bindtap="palylink" data-index="{{in}}">
+      <view class="txtbox" >
+        <text class="mname">{{item.name}}</text>
+        <text class="name">{{singerdetail.data.data.artist.name}}-{{item.al.name}}</text>
+      </view>
+      <view class="playimg"  >
+        <image class="playimg" src="/images/play.png" mode=""/>
+      </view>
+    </view>
+  </block>
+  
+</view>

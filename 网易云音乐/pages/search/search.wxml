@@ -1,0 +1,42 @@
+<!--pages/search/search.wxml-->
+<!-- <text>pages/search/search.wxml</text> -->
+<view class="searchbox">
+<image src="/images/search.png" mode="widthFix" bindtap="search"/>
+  <input type="text" class="txt" placeholder="搜索歌曲" value="{{word}}" bindfocus="searchlink" auto-focus="true" bindinput="inputshow" bindblur="search"/>
+</view>
+<!-- 热搜榜 -->
+
+<view class="searchlist" hidden="{{songlist.length!==0}}">
+  <view class="title">热搜榜</view>
+  <block wx:for="{{searchdata}}" wx:key="this" wx:for-index="in">
+    <view class="item" data-word="{{item.searchWord}}" bindtap="clickword">
+    <text class="nub">{{in+1}}</text>
+      <view class="con">
+        <view class="namebox">
+          <text class="name">{{item.searchWord}}</text>
+          <image class="icon" src="{{item.iconUrl}}" mode="widthFix"/>
+        </view>
+        <text class="txt">{{item.content}}</text>
+      </view>
+    <text class="score">{{item.score}}</text>
+  </view>
+  </block>
+</view>
+<!-- 搜索结果 -->
+<view class="musicbox">
+  <block wx:for="{{songlist}}" wx:key="index" wx:for-index="in">
+    <view class="item" bindtap="palylink"  data-index="{{in}}" bindtap="play">
+      <view class="txtbox">
+        <text class="mname">{{item.name}}</text>
+        <view class="namebox">
+          <image src="/images/sq_01.png" mode="widthFix"/>
+          <text class="name">{{item.ar[0].name}}-{{item.al.name}}</text>
+        </view>
+        
+      </view>
+      <view class="playimg" >
+        <image class="playimg" src="/images/play.png" mode=""/>
+      </view>
+    </view>
+  </block>
+</view>

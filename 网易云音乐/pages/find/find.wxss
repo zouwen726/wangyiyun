@@ -1,0 +1,74 @@
+/* pages/find/find.wxss */
+page{
+  padding: 25rpx;
+  box-sizing: border-box;
+}
+.searchbox{
+  width: 100%;
+  height: 90rpx;
+  background-color: rgb(231, 231, 231);
+  border-radius: 60rpx;
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  padding-left: 30rpx;
+  box-sizing: border-box;
+}
+.searchbox image{
+  width: 60rpx;
+  height: 60rpx;
+}
+.searchbox .txt{
+  /* background-color: yellow; */
+  flex: 1;
+  height: 80rpx;
+  padding-left: 8rpx;
+  font-size: 32rpx;
+}
+.topbox{
+  padding: 20rpx 0rpx;
+}
+.topbox .item{
+  display: flex;
+  margin: 30rpx 0rpx;
+}
+.topbox .item .imgbox{
+  width: 280rpx;
+  height: 280rpx;
+  border-radius: 20rpx;
+  margin-right: 20rpx;
+  position: relative;
+}
+.imgbox image{
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 20rpx;
+}
+.imgbox text{
+  position: absolute;
+  bottom: 0;
+  left: 20rpx;
+  font-size: 25rpx;
+  bottom: 10rpx;
+  color: #fff;
+}
+.topbox .musiclist{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.musiclist .musicitem{
+  font-size: 30rpx;
+  color: #555;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 380rpx;
+
+}
+::-webkit-scrollbar{
+  display: none;
+}

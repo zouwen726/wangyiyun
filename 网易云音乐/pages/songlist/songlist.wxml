@@ -1,0 +1,84 @@
+<!-- 首页 -->
+<!-- banner -->
+<swiper 
+  indicator-dots="true" 
+  indicator-color="rgba(255,255,255,0.5)rgba(255,255,255,0.5)"
+  indicator-active-color="rgba(194,12,12,1)"
+  autoplay="true"
+  interval="2000"
+  duration="1000"
+  circular="true"
+  >
+    <block wx:for="{{background}}" wx:key="index"> 
+      <swiper-item>
+        <view>
+          <image src="{{item.imageUrl}}" mode="widthFix"/>
+        </view>
+      </swiper-item>
+    </block>
+</swiper>
+<!-- 金刚图 -->
+<view class="tablist">
+  <view class="tabitem">
+    <image src="/images/tab-search.png" bindtap="tabsearch" mode="widthFix"/>
+    <view>搜索</view>
+  </view>
+  <view class="tabitem">
+    <image src="/images/tab-playbtn.png" bindtap="tabmv" mode="widthFix"/>
+    <view>MV精选</view>
+  </view>
+  <view class="tabitem">
+    <image src="/images/tab-hot.png" bindtap="tabhot" mode="widthFix"/>
+    <view>热门歌曲</view>
+  </view>
+  <view class="tabitem">
+    <image src="/images/tab-classbtn.png" bindtap="tabclassify" mode="widthFix"/>
+    <view>分类</view>
+  </view>
+  <view class="tabitem">
+    <image src="/images/tab-person.png" bindtap="tabuser" mode="widthFix"/>
+    <view>个人中心</view>
+  </view>
+</view>
+<!-- 热门歌手 -->
+<view class="title">热门歌手</view>
+<view class="hotlist">
+  <block wx:for="{{singer}}" wx:key="index" wx:for-index="in"> 
+    <view class="item" data-index="{{in}}"  bindtap="hotlink">
+    <image src="{{item.picUrl}}" mode="widthFix"/>
+    <text>{{item.name}}</text>
+    </view>
+  </block>
+</view>
+<!-- 热歌推荐 -->
+<view class="title">热歌推荐</view>
+<view class="hotlist">
+  <block wx:for="{{hotMusicList}}" wx:key="index" wx:for-index="in"> 
+    <view class="item" data-index="{{in}}"  bindtap="playhotlink">
+    <image src="{{item.al.picUrl}}" mode=""/>
+    <text>{{item.name}}</text>
+    </view>
+  </block>
+</view>
+<!-- 最新音乐 -->
+<view class="title">最新音乐</view>
+<view class="musicbox">
+  <block wx:for="{{newMusicList}}" wx:key="index" wx:for-index="in">
+    <view class="item" bindtap="palylink"  data-index="{{in}}">
+    <view class="picbox">
+      <image class="pic" src="{{item.picUrl}}" mode="widthFix"/>
+    </view>
+      <view class="txtbox">
+        <text class="mname">{{item.name}}</text>
+        <view class="namebox">
+          <image src="/images/sq_01.png" mode="widthFix"/>
+          <text class="name">{{item.song.artists[0].name}}</text>
+        </view>
+      </view>
+      <view class="playimg" >
+        <image class="playimg" src="/images/play.png" mode=""/>
+      </view>
+    </view>
+  </block>
+</view>
+  

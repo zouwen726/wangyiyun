@@ -1,0 +1,22 @@
+<video class="mv_video" autoplay="true" loop="true" src="{{mvurl}}"></video>
+<view class="mvdetail">
+  <view class="name">{{mvdata.name}}</view>
+  <view class="artistName"> {{mvdata.artistName}}</view>
+  <view class="con">{{count}}次播放-发行时间-{{mvdata.publishTime}}</view>
+</view>
+<!-- 推荐mv -->
+<view class="title">
+  推荐MV  
+</view>
+<view class="mvlist">
+  <block wx:for="{{mvlist}}" wx:key="index" wx:for-index="in">
+    <view class="item" data-index="{{in}}" bindtap="playvideo">
+      <image src="{{item.cover}}" mode="widthFix"/>
+      <view class="conbox">
+        <view class="name">{{item.name}}</view>      
+        <view class="txt">{{item.artistName}}</view>
+      </view>
+    </view>
+  </block>
+ 
+</view>

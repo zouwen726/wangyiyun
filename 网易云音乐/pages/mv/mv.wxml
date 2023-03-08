@@ -1,0 +1,20 @@
+<!--pages/mv/mv.wxml-->
+<!-- <text>pages/mv/mv.wxml</text> -->
+<view class="title">网易云精选视频</view>
+<view class="mvlist">
+  
+  <block wx:for="{{mvdata.data.data}}" wx:key="index" wx:for-index="in">
+    <view class="mvitem" data-mid="{{item.id}}" bindtap="mvitem">
+      <view class="imgbox">
+        <image src="{{item.cover}}" mode="widthFix"/>
+        <view class="countbox">
+          <image src="/images/mv.png" mode="widthFix"/>
+          <view>{{item.countstr}}</view>
+        </view>
+      </view>
+      <view class="txt">{{item.name}}</view>
+    </view>
+  </block>
+  
+   
+</view>

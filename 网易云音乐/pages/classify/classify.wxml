@@ -1,0 +1,15 @@
+<!-- 分类页面 -->
+<view class="nav">
+   <block wx:for="{{navlist}}" wx:for-index="in" wx:key="this">
+     <view data-name="{{item.name}}" data-index="{{in}}" bindtap="navclick" class="{{in===nowindx? 'active':''}}">{{item.name}}</view>
+   </block>
+</view>
+<view class="imgbox">
+  <block wx:for="{{musiclist}}" wx:key="this" wx:for-index="in">
+  <view class="imgwrap" bindtap="playclick" data-index="{{in}}">
+    <!-- <image class="imgbg" src="{{item.coverImgUrl}}"></image> -->
+    <image mode="widthFix" src="{{item.coverImgUrl}}"></image>
+  </view>
+</block>
+  
+</view>

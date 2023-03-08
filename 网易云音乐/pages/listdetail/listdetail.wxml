@@ -1,0 +1,33 @@
+<view class="listheader">
+  <view class="imgbox">
+    <image src="{{listdata.coverImgUrl}}" mode=""/>
+  </view>
+  <view class="txtbox">
+    <view class="name"> {{listdata.name}}</view>
+    <view class="wangyi">
+      <view><image class="logo" src="/images/logo.png" mode=""/></view>
+      <view> 网易云音乐</view>
+    </view>
+    <view class="txt"> {{listdata.description}}</view>
+  </view>
+</view>
+
+<!-- 最新音乐 -->
+<view class="musicbox">
+  <block wx:for="{{musiclist}}" wx:key="index" wx:for-index="in">
+    <view class="item" bindtap="play" data-index="{{in}}">
+      <view class="num">
+        {{in+1}}
+      </view>
+      <view class="txtbox">
+        <text class="mname">{{item.name}}</text>
+        <text class="name">{{item.ar[0].name}}</text>
+      </view>
+      <view class="playimg" bindtap="palylink" data-index="{{in}}">
+        <image class="playimg" src="/images/play.png" mode=""/>
+      </view>
+    </view>
+  </block>
+</view>
+  
+

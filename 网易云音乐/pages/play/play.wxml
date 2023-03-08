@@ -1,0 +1,71 @@
+<image class="bg" src="{{music.al.picUrl}}" />
+<!-- 头部 -->
+<view class="musicName">
+  {{music.name}}
+</view>
+
+<!-- 轮播组件 -->
+<swiper bindtap="hiddenlist">
+  <swiper-item class="imgbox">
+    <image src="{{music.al.picUrl}}" mode=""/>
+  </swiper-item>
+  <!-- 滑动组件 -->
+  <swiper-item>
+    <scroll-view class="lrcscroll" scroll-y="false" scroll-top="{{top}}" scroll-with-animation="true">
+    <block wx:for="{{lrcdata}}" wx:key="this" wx:for-index="in">
+      <view class="{{in===lrcindex?'color':''}}" data-index="{{in}}">{{item[1]}}
+      </view>
+    </block>
+    </scroll-view>
+  </swiper-item>
+</swiper>
+<!-- mv -->
+<view class="mv" bindtap="playmv">
+  <image src="/images/mv.png" mode="" />
+  <text>MV</text>
+</view>
+<!-- 进度条 -->
+<view class="timebox">
+  <view>
+    {{playtime}}
+  </view>
+  <slider activeColor="#c20c0c" max="{{maxtime}}" value="{{valuetime}}" bindchange="sliderchange" block-size="12"/>
+  <view>
+    {{sumtime}}
+  </view>
+</view>
+<!-- 底部 -->
+<view class="footer">
+  <view class="playmode" bindtap="playmode">
+    <image src="/images/{{modestate}}.png" mode=""/>
+  </view>
+  <image src="/images/pre.png" mode="" bindtap="pervsong"/>
+  <image bindtap="playdate" src="/images/{{action.method==='play'?'play2':'play1'}}.png" mode=""/>
+  <image src="/images/next.png" mode="" bindtap="nextsong"/>
+  <image src="/images/playlist.png" mode="" bindtap="playlist"/>
+</view>
+
+<audio src="http://music.163.com/song/media/outer/url?id={{musicid}}.mp3" action="{{action}}" bindtimeupdate="timechange" bindended="musicend"></audio>
+<!-- 播放列表 -->
+<scroll-view scroll-with-animation="true" class="scroll-listbox {{listtop==0?'evenNone':''}}" scroll-y="true" scroll-top="{{listtop}}">
+  <view class="playlist" >
+    <view class="list_head">
+      <text class="txt">当前播放</text>
+      <text class="nub">({{musiclist.length}})</text>
+    </view>
+    <scroll-view class="itemscroll" scroll-y="true" scroll-top="{{nowindex*50}}">
+      <block wx:for="{{musiclist}}" wx:for-index="in" wx:key="this">
+        <view class="item">
+          <view class="conbox {{in===nowindex?'active':''}}" data-index="{{in}}" bindtap="musicchange">
+            <text class="musicname" >{{item.name}}</text>
+            <text class="name">-{{item.ar[0].name}}</text>
+          </view>
+          <view class="delbox" bindtap="deletemusic" data-index="{{in}}">
+            <image src="/images/del.png" mode=""/>
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+   
+  </view>
+</scroll-view>

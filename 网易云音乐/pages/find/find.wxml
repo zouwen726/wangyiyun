@@ -1,0 +1,25 @@
+<!--pages/find/find.wxml-->
+<!-- <text>pages/find/find.wxml</text> -->
+<view class="searchbox">
+<image src="/images/search.png" mode=""/>
+  <input type="text" class="txt" placeholder="搜索歌曲" bindfocus="searchlink"/>
+</view>
+<view class="topbox">
+  <block wx:for="{{toplist}}" wx:for-index="in" wx:key="this">
+    <view class="item" bindtap="linklistdetail" data-index="{{in}}">
+    <view class="imgbox">
+      <image src="{{item.coverImgUrl}}" mode="widthFix"/>
+      <text>{{item.updateFrequency}}</text>
+    </view>
+     
+      <view class="musiclist" >
+        <block wx:for="{{item.songlist}}" wx:for-index="in"  wx:key="this">
+          <view class="musicitem" >
+            {{in+1}}  {{item.name}}-{{item.ar[0].name}}
+          </view>
+        </block>
+      </view>
+    </view>
+  </block>
+</view>
+

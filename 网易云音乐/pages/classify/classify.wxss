@@ -1,0 +1,71 @@
+/* pages/classify/classify.wxss */page{
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.nav{
+  width: 30%;
+  height: 100%;
+  background-color: rgb(247, 247, 247);
+  overflow: auto;
+
+}
+.nav view{
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 28rpx;
+  position: relative;
+  color: #555555;
+}
+.nav view.active{
+  background-color: white;
+  color:tomato ;
+}
+.active::after{
+  content: "";
+  position: absolute;
+  width: 8rpx;
+  height: 70%;
+  background-color: tomato;
+  border-radius: 5rpx;
+  left: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  
+}
+.imgbox{
+  flex: 1;
+  /* background-color: pink; */
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  overflow: auto;
+
+}
+.imgwrap{
+  width:33vw;
+  height:33vw;
+  overflow: hidden;
+  margin: 8rpx 0rpx;
+  border-radius: 20rpx;
+  position: relative;
+  
+}
+.imgwrap image{
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  
+}
+.imgwrap .imgbg{
+  width: 100%;
+  height: 100%;
+  filter: blur(10px);
+  top: 0;left: 0;
+  right: 0;bottom: 0;
+  margin: auto;
+
+}
